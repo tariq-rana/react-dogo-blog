@@ -13,7 +13,7 @@ const BlogDetails = () => {
             method: 'DELETE'
         }).then( () =>{
             console.log('Blog deleted');
-            history.push('/');
+            history.push('/home');
         })
     }
 
@@ -26,7 +26,7 @@ const BlogDetails = () => {
                     <h2>{ blog.title }</h2>  
                     <p>Written by {blog.author}</p>
                     <div>{blog.body}</div>
-                    <button onClick={ deleteBlog }>Delete</button>
+                    <button onClick={ () => window.confirm("Are you sure, delete ?") && deleteBlog() }>Delete</button>
                 </article>
            )}
         </div>
