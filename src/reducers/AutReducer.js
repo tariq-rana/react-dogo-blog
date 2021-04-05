@@ -1,15 +1,16 @@
-
-const ACTION = {
-    LOGIN: 'login'
+export const ACTION = {
+    LOGIN: 'login',
+    LOGOUT: 'logout'
 }
+
 
 export const reducer = (user, action) =>{
     switch(action.type){
-        case 'login':
+        case ACTION.LOGIN:
             return (
                 {...action.payload}
             )
-        case 'logout':
+        case ACTION.LOGOUT:
             return (
                 {name:null, pass:null, isLoggedIn:false}
             )

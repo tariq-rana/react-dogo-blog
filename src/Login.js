@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { AuthContext } from './contexts/AuthContext';
-
+import { ACTION } from './reducers/AutReducer';
 
 const Login = () => {
     const history = useHistory();
@@ -11,7 +11,7 @@ const Login = () => {
 
     useEffect(() =>{
         dispatch({
-            type:'logout',  
+            type: ACTION.LOGOUT,  
             payload: {...user,
                        isLoggedIn: true
             }       
@@ -22,7 +22,7 @@ const Login = () => {
     const handleChange = (e) =>{
         const loginUser = {...user};
         loginUser[e.target.name] = e.target.value;
-        dispatch({ type:'login',  payload: {...loginUser}});
+        dispatch({ type: ACTION.LOGIN,  payload: {...loginUser}});
     }
 
     const handleSubmit = (e) =>{

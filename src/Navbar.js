@@ -4,7 +4,7 @@ import { Link  } from 'react-router-dom';
 import { AuthContext } from './contexts/AuthContext.js';
 
 const Navbar = () => {
-    const { user,dispatcj } = useContext(AuthContext);
+    const { user,dispatch } = useContext(AuthContext);
     return(
          ( user.isLoggedIn && 
          <nav className="navbar">
